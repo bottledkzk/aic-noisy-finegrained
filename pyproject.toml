@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aic-noisy-finegrained"
+version = "0.1.0"
+description = "Robust CLIP fine-tuning and semi-relaxed optimal transport for fine-grained recognition"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["numpy>=1.26,<3", "scipy>=1.11,<2"]
+
+[project.optional-dependencies]
+vision = ["torch>=2.8,<3", "torchvision>=0.23,<1", "transformers>=4.52,<6", "Pillow>=10,<13"]
+
+[project.scripts]
+aic-finegrained = "aic_finegrained.cli:main"
+
+[project.urls]
+Repository = "https://github.com/bottledkzk/aic-noisy-finegrained"
+
+[tool.setuptools.packages.find]
+where = ["src"]
